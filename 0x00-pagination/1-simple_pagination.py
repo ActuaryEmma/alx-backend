@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+Task 1
+"""
+
 import csv
 import math
 from typing import List
