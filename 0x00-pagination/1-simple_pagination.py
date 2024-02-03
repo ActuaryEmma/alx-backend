@@ -46,5 +46,3 @@ class Server:
 
         start_index, end_index = self.index_range(page, page_size)
         return self.dataset()[start_index:end_index]
-    
-
