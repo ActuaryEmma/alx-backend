@@ -278,8 +278,8 @@ msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "home_header"
-msgstr "Bonjour monde!"
-
 msgid "home_title"
 msgstr "Bienvenue chez Holberton"
+
+msgid "home_header"
+msgstr "Bonjour monde!"
