@@ -28,10 +28,10 @@ def index():
     """
     Handle requests to the root directory.
     """
-    return (render_template("3-index.html"))
+    return (render_template("4-index.html"))
 
 
-#@babel.localeselector
+@babel.localeselector
 def get_locale():
     """
     Find the best language match based
