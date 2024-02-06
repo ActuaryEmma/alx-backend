@@ -281,5 +281,5 @@ msgstr[1] ""
 msgid "home_header"
 msgstr "Hello world!"
 
-msgid "Home_title"
+msgid "home_title"
 msgstr "Welcome to Holberton"
