@@ -42,5 +42,5 @@ def get_locale():
     query_string = request.query_string.decode("utf-8")
     language = query_string[(query_string.find("=") + 1):]
     if (language in app.config["LANGUAGES"]):
-        return (query_string[(query_string.find("=") +1):])
+        return (query_string[(query_string.find("=") + 1):])
     return (request.accept_languages.best_match(app.config["LANGUAGES"]))
