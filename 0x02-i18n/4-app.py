@@ -3,6 +3,8 @@
 Define a Flask app that implements Babel
 for i18n.
 """
+
+
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
