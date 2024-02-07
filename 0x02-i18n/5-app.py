@@ -60,7 +60,6 @@ def get_user():
     returns a user dictor None if the ID cannot
     be found or if login_as was not passed.
     """
-    
     user_id = request.args.get('login_as', None)
     if user_id is not None:
         return users.get(int(user_id))
