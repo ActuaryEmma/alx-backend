@@ -41,25 +41,30 @@ def index():
     return (render_template("5-index.html"))
 
 
-# @babel.localeselector
+@babel.localeselector
 def get_locale():
     """
     Find the best language match based
     on the user's locale.
     """
-    query_string = request.query_string.decode("utf-8")
-    language = query_string[(query_string.find("=") + 1):]
-    if (language in app.config["LANGUAGES"]):
-        return (query_string[(query_string.find("=") + 1):])
+    app.logger.info("emma")
+    locale = request.args.get('locale', None)
+    app.logger.info(locale)
+    if locale in app.config["LANGUAGES"]:
+        return locale
     return (request.accept_languages.best_match(app.config["LANGUAGES"]))
 
 
-def get_user(user_id):
+def get_user():
     """
     returns a user dictor None if the ID cannot
     be found or if login_as was not passed.
     """
-    return users.get(user_id)
+    
+    user_id = request.args.get('login_as', None)
+    if user_id is not None:
+        return users.get(int(user_id))
+    return None
 
 
 @app.before_request
@@ -67,6 +72,5 @@ def before_request():
     """
     before_request should use get_user to find a user
     if any, and set it as a global on flask.g.user
-    """
-    user_id = request.args.get('login_as')
-    g.user = get_user(int(user_id)) if user_id else None
+    """    
+    g.user = get_user()
